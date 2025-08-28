@@ -1,10 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const pool = require("./db");
+// const pool = require("./db");
 
 const app = express();
-const PORT = 3000;
 
 // 🔧 Configuración
 const PIXEL_ID = '';
