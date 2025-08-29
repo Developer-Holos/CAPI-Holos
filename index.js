@@ -5,7 +5,8 @@ const pool = require("./db");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // 🔧 Configuración TOKEN META
 const PIXEL_ID = '';
 const ACCESS_TOKEN = 'EAAO5UqGn1ZB0BPVserklJoUS8ZBmusJBxGZAZCw5MCZCT6M7z51mQNKa6QKauzVBCBFWg2qBPTBx0S2A4dm1kqHjmZBBkInQyZBrCGAahVLE2cw9G8RShaJ3MjZCC40kXZAtfxZAZBOZA0MhyX3L0becfHm6J0Q4bmxqHKyirnDyxQjvxWyHk5cCX8EofxX4XBo1Q1qDrwZDZD';
@@ -217,8 +218,8 @@ async function sendToKommo(name, phone, click_id, ad_info, message) {
 
 
 // // LEAD GANADO
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 async function fetchLeadDetails(leadId) {
   const url = `https://holos.kommo.com/api/v4/leads/${leadId}`;
   try {
