@@ -8,14 +8,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // 🔧 Configuración TOKEN META
-const PIXEL_ID = '';
-const ACCESS_TOKEN = 'EAAO5UqGn1ZB0BPVserklJoUS8ZBmusJBxGZAZCw5MCZCT6M7z51mQNKa6QKauzVBCBFWg2qBPTBx0S2A4dm1kqHjmZBBkInQyZBrCGAahVLE2cw9G8RShaJ3MjZCC40kXZAtfxZAZBOZA0MhyX3L0becfHm6J0Q4bmxqHKyirnDyxQjvxWyHk5cCX8EofxX4XBo1Q1qDrwZDZD';
+const PIXEL_ID = '1177200587199090';
+const ACCESS_TOKEN = 'EAALYWYQK2FIBPfJilhoa0GPqKeDpZAjv9dL51UHQ4NHiGovlpfu9P7HkZB1uHm8cLasuZAvbBBOHZAdrKTtwrx3zQ7jL54pHHCLj53QOICMCF0fBBIbl7mZAK8hH2a7SlFunsw6CzQY2azX7t2HOkQFVFRNHON0YDTVcYPARFzJmRVN6uZAjLlU7TIZAqWEV8kBkQZDZD';
 const VERIFY_TOKEN = "capiHolosToken";
 
 // KOMMO 
-const PIPELINE_ID = 11867804; 
-const KOMMO_WEBHOOK_URL = "https://holos.kommo.com/api/v4/leads";
-const KOMMO_SECRET_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJlNWU2ZGQxM2M3MmRmYjE3MmI2NzMwNjZlNDk5NGRkM2IwMmNhZDZhNDc0NjFjZGU1ZWM2MzQ0NGRmOTAzZGNlYjZmOTIyNzVkMjNhNTRlIn0.eyJhdWQiOiI1YmZjNjcxMC1iMDk4LTRlMjktODI5MC0yYTk5YzI3Yjc4ODEiLCJqdGkiOiJiZTVlNmRkMTNjNzJkZmIxNzJiNjczMDY2ZTQ5OTRkZDNiMDJjYWQ2YTQ3NDYxY2RlNWVjNjM0NDRkZjkwM2RjZWI2ZjkyMjc1ZDIzYTU0ZSIsImlhdCI6MTc1NjQzNjYwNCwibmJmIjoxNzU2NDM2NjA0LCJleHAiOjE5MTQxMDU2MDAsInN1YiI6IjExNjIyNjM2IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMwMDUzMjI1LCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwidXNlcl9mbGFncyI6MSwiaGFzaF91dWlkIjoiOTFhMDRmY2UtMDlmZi00MDgxLTg3NzYtZWJlZmZhM2ZjYTg3IiwiYXBpX2RvbWFpbiI6ImFwaS1nLmtvbW1vLmNvbSJ9.p1IxPfo6o8cAt9Hlc5B_z-GdIs_Jrro-ZsmiFmhqzoeUfNgUQpZDu1OL3FwCTGawz2bkP6YBQJmcDyq44p6jceI0E8KoZ3sV1LAyn-iBAPrWB1-YM_pE_Q2QPfhKJa4gNv_W3yGkzPeENSrLasI698pYTuZ4nHnYxtoqWCvqrsz3SU8ELNfYltmYM1fut61x0OwkeZTJuW03SJ_e2IAWWV5jmEqRXiTvDOjswamaic3FGMTCb5lvVKeFR4lT-kfmvUs1HZqZXrL93VN63QF3_bI5T2XxLpt65F1B-6YTYWJx6_Pk8iMgAUaHE8wfKNymCIbAOPj3IcYuzkgrag7TcQ";
+const PIPELINE_ID = 11886423; 
+const KOMMO_WEBHOOK_URL = "https://h0l0s.kommo.com/api/v4/leads";
+const KOMMO_SECRET_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjUzNmM0Yjc1MWRkN2IwZGM5YzQ4MDQxNzlmNDk3M2NlYzlmNmNjMjgyNTUyZjc5ZmRiYWVkYzJlMDNkMjI5NTU1NzliMTQ3ZDU0OWZkZDExIn0.eyJhdWQiOiIyOTQ0MTI4Ny1lMWJkLTQ4NDgtYWM3OC1jNWE0MWE4MmExMjUiLCJqdGkiOiI1MzZjNGI3NTFkZDdiMGRjOWM0ODA0MTc5ZjQ5NzNjZWM5ZjZjYzI4MjU1MmY3OWZkYmFlZGMyZTAzZDIyOTU1NTc5YjE0N2Q1NDlmZGQxMSIsImlhdCI6MTc1NjczODU0MiwibmJmIjoxNzU2NzM4NTQyLCJleHAiOjE3NjcwNTI4MDAsInN1YiI6IjExNjIyNjM2IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyNjQwMjU1LCJiYXNlX2RvbWFpbiI6ImtvbW1vLmNvbSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwidXNlcl9mbGFncyI6MSwiaGFzaF91dWlkIjoiYzZiZGI5MTUtNmYxZi00NGFkLThlMDctNDI1OTUxYTc5NDBjIiwiYXBpX2RvbWFpbiI6ImFwaS1jLmtvbW1vLmNvbSJ9.oVyZZg2AI42MApcBa9vE0G9LQz-2q9Fkt8wFEijcefvGLl9XQ_iH8EzuPYKdAjVor-s6GRTmc9B49EtMzU_OFvGwrFqRofGWiCm6n2epHOllpGJWbik8pyNFvaU6JPN4ShGfI7wMBJ_yb02p2bRy7Kx0hmOeQYhIA9JS_GTrUhQ3CDG7fZCK7_r04tYCaktzVZRMPRNTekipPFMTia3zw7Z76l7ZbMLhBpYMeUhSVBnrVBfFudIfG6F3y1Ht0BVkOtQUgzj3isgXSHziGp98VqH4aD7vxQ15vZnDX8BW2QfDb7Tl8rn6yvP1wGzKM7EXOolmDmqW9S3WzPZBlb4YWA";
 
 app.get("/", (req, res) => {
   res.status(200).send("🚀 Servidor de CAPI HOLOS funcionando correctamente!");
@@ -166,12 +166,12 @@ app.post("/wstp/Holos", async (req, res) => {
 // // ✅ Crear lead en Kommo
 async function sendToKommo(name, phone, click_id, ad_info, message) {
   try {
-    const contactsRes = await axios.get(`https://holos.kommo.com/api/v4/contacts?query=${phone}`,{ headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` } });
+    const contactsRes = await axios.get(`https://h0l0s.kommo.com/api/v4/contacts?query=${phone}`,{ headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` } });
     const contacts = contactsRes.data?._embedded?.contacts || [];
     let activeLead = null;
     if (contacts.length!== 0) {
       console.log("✅ Hay información del contacto");
-      const withLeadsRes = await axios.get( `https://holos.kommo.com/api/v4/contacts?with=leads&query=${phone}`,{ headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` } });
+      const withLeadsRes = await axios.get( `https://h0l0s.kommo.com/api/v4/contacts?with=leads&query=${phone}`,{ headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` } });
       const fullContacts = withLeadsRes.data?._embedded?.contacts || [];
       for (const contact of fullContacts) {
         const leads = contact._embedded?.leads || [];
@@ -183,14 +183,14 @@ async function sendToKommo(name, phone, click_id, ad_info, message) {
           id: activeLead.id,
           pipeline_id: PIPELINE_ID,
           custom_fields_values: [
-            { field_id: 797807, values: [{ value: click_id }] }, // Click ID
-            { field_id: 797809, values: [{ value: ad_info.campaign_name }] },
-            { field_id: 797811, values: [{ value: ad_info.campaign_id }] },
-            { field_id: 797813, values: [{ value: ad_info.adset_name }] },
-            { field_id: 797815, values: [{ value: ad_info.adset_id }] },
-            { field_id: 797817, values: [{ value: ad_info.ad_name }] },
-            { field_id: 797819, values: [{ value: ad_info.ad_id }] },
-            { field_id: 797821, values: [{ value: message }] }
+            { field_id: 2971456, values: [{ value: click_id }] }, // Click ID
+            { field_id: 2971458, values: [{ value: ad_info.campaign_name }] },
+            { field_id: 2971460, values: [{ value: ad_info.campaign_id }] },
+            { field_id: 2971462, values: [{ value: ad_info.adset_name }] },
+            { field_id: 2971464, values: [{ value: ad_info.adset_id }] },
+            { field_id: 2971466, values: [{ value: ad_info.ad_name }] },
+            { field_id: 2971468, values: [{ value: ad_info.ad_id }] },
+            { field_id: 2971470, values: [{ value: message }] }
           ]
         };
         await axios.patch(KOMMO_WEBHOOK_URL, [payload], {
@@ -221,7 +221,7 @@ async function sendToKommo(name, phone, click_id, ad_info, message) {
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 async function fetchLeadDetails(leadId) {
-  const url = `https://holos.kommo.com/api/v4/leads/${leadId}`;
+  const url = `https://h0l0s.kommo.com/api/v4/leads/${leadId}`;
   try {
     const response = await axios.get(url, {
       headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` }
@@ -233,7 +233,7 @@ async function fetchLeadDetails(leadId) {
 }
 
 async function fetchStageName(pipelineId, statusId) {
-  const url = `https://holos.kommo.com/api/v4/leads/pipelines/${pipelineId}`;
+  const url = `https://h0l0s.kommo.com/api/v4/leads/pipelines/${pipelineId}`;
   try {
     const response = await axios.get(url, {
       headers: { Authorization: `Bearer ${KOMMO_SECRET_TOKEN}` },
@@ -320,7 +320,7 @@ app.post("/kommo/conversion", async (req, res) => {
 async function sendMetaConversion(click_id, leadValue) {
   const url = `https://graph.facebook.com/v23.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`;
   const eventTime = Math.floor(Date.now() / 1000);
-  const page_id = "361404980388508"
+  const page_id = "518711484912355"
   const payload = {
     data: [
       {
