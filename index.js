@@ -7,9 +7,15 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 // 🔧 Configuración TOKEN META
-const PIXEL_ID = '1177200587199090';
-const ACCESS_TOKEN = 'EAALYWYQK2FIBPfJilhoa0GPqKeDpZAjv9dL51UHQ4NHiGovlpfu9P7HkZB1uHm8cLasuZAvbBBOHZAdrKTtwrx3zQ7jL54pHHCLj53QOICMCF0fBBIbl7mZAK8hH2a7SlFunsw6CzQY2azX7t2HOkQFVFRNHON0YDTVcYPARFzJmRVN6uZAjLlU7TIZAqWEV8kBkQZDZD';
+// const PIXEL_ID = '1177200587199090';
+// const ACCESS_TOKEN = 'EAALYWYQK2FIBPfJilhoa0GPqKeDpZAjv9dL51UHQ4NHiGovlpfu9P7HkZB1uHm8cLasuZAvbBBOHZAdrKTtwrx3zQ7jL54pHHCLj53QOICMCF0fBBIbl7mZAK8hH2a7SlFunsw6CzQY2azX7t2HOkQFVFRNHON0YDTVcYPARFzJmRVN6uZAjLlU7TIZAqWEV8kBkQZDZD';
+
+//TEST
+const PIXEL_ID = '1078649547548264';
+const ACCESS_TOKEN = 'EAAbbqu8BZCPIBPOCWCZBaVJ8OzaO86d3JPWXOCWiXaKHnkUeeChUkbnqsWFa9ZCLDvMlZAZC9JapyAkmZCIqHJ0kKDknsFZCGy55yUbbVCUev3UGV6AZArf4sX7z7pbALZA9cJuRY05RMZBAgXtrzWmeydcqbXNQZAz26MQdVR5WCd5YNdfaZAA3rFBCqLXE1nPg6QcVEQZDZD';
+
 const VERIFY_TOKEN = "capiHolosToken";
 
 // KOMMO 
@@ -320,7 +326,8 @@ app.post("/kommo/conversion", async (req, res) => {
 async function sendMetaConversion(click_id, leadValue) {
   const url = `https://graph.facebook.com/v23.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`;
   const eventTime = Math.floor(Date.now() / 1000);
-  const page_id = "518711484912355"
+  // const page_id = "518711484912355"
+  const page_id = "361404980388508"
   const payload = {
     data: [
       {
